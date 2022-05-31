@@ -9,6 +9,7 @@ function HomePage() {
         <div className='home'>
             <Sidebar/>
             <div className="homeContainer">
+              <Navbar/>
                 homeContainer
             </div>
         </div>
