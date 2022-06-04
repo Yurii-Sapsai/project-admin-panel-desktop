@@ -8,9 +8,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { productInputs, userInputs } from "./formSource";
 
+import './style/dark.sass'
+
+import { useContext } from "react";
+import { DarkModeContext } from "./context/darkModeContext";
+
+
 function App() {
+
+  const {darkMode} = useContext(DarkModeContext)
+
   return (
-    <Router >
+    <div className={darkMode ? "app dark" : "app"}>
+      <Router >
       <Routes>
         <Route path="/">
           <Route index element={<HomePage />} />
@@ -28,6 +38,7 @@ function App() {
         </Route>
       </Routes>
     </Router>
+    </div>
   );
 }
 
