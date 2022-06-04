@@ -14,11 +14,15 @@ import SettingsApplicationsIcon from '@mui/icons-material/SettingsApplications';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 
+import {Link} from 'react-router-dom'
+
 function Sidebar() {
   return (
     <div className='sidebar'>
         <div className='top'>
-          <span className='logo'>Admin Panel</span>
+          <Link to="/" style={{textDecoration:"none"}}>
+              <span className='logo'>Admin Panel</span>
+          </Link>
         </div>
         <div className='center'>
           <ul>
@@ -28,14 +32,18 @@ function Sidebar() {
               <span>Dashboard</span>
             </li>
             <p className="title">LISTS</p>
+            <Link to="/users" style={{textDecoration:"none"}}>
             <li>
               <PersonOutlineOutlinedIcon className='icon'/>
               <span>Users</span>
             </li>
+            </Link>
+            <Link to="/products" style={{textDecoration:"none"}}>
             <li>
               <Inventory2OutlinedIcon className='icon'/>
               <span>Products</span>
             </li>
+            </Link>
             <li>
               <CreditCardIcon className='icon'/>
               <span>Orders</span>
